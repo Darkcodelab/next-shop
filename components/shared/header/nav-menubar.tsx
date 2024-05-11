@@ -14,6 +14,7 @@ import {
   Mailbox,
   Menu,
   MessageCircleQuestion,
+  Phone,
   ShoppingCart,
   Store,
 } from "lucide-react";
@@ -38,6 +39,11 @@ const navLinks = [
     path: "/about",
     name: "About",
     icon: <BookHeart />,
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    icon: <Phone />,
   },
   {
     path: "/newsletter",

@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 // components
 import NextAuthProvider from "@/components/next-auth-provider";
 import Header from "@/components/shared/header";
+import Footer from "@/components/shared/footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
         <body className={cn("min-h-screen font-poppins", poppins.variable)}>
           <Header />
           {children}
+          <Footer />
         </body>
       </html>
     </NextAuthProvider>

@@ -22,8 +22,8 @@ const handler = NextAuth({
       return session;
     },
 
-    async signIn({ profile, account, user }) {
-      const googleProfile = profile as GoogleProfile;
+    async signIn({ profile }) {
+      const googleProfile = profile as GoogleProfile | undefined;
       try {
         let user = await prisma.user.findFirst({
           where: {
@@ -35,7 +35,7 @@ const handler = NextAuth({
           user = await prisma.user.create({
             data: {
               email: googleProfile?.email,
-              image: googleProfile.picture,
+              image: googleProfile?.picture,
               name:
                 googleProfile?.given_name + " " + googleProfile?.family_name,
             },
